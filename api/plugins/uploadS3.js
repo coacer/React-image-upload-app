@@ -18,7 +18,8 @@ function upload(file) {
     Bucket: BUCKET,
     Key: file.filename,
     Expires: 60,
-    ContentType: file.filetype
+    ContentType: file.filetype,
+    ACL: "public-read"
   };
 
   return new Promise((resolve, reject) => {
